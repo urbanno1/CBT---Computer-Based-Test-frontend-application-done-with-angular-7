@@ -1,0 +1,104 @@
+
+
+  .app-header{
+    color: #fff;
+        background-color: #e91e63;
+        text-align: center;
+        padding: 1%;
+    -webkit-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+    -moz-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+    box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+    }
+    
+.sidenav-container {
+  height: 100%;
+  background: #e91e63
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.hidden
+{
+ display: none;
+}
+
+
+@media(min-width:768px){
+  .sidenav {
+    display: none;
+    }
+}
+
+.spacer
+{
+ flex: 1 1 auto;
+}
+
+.cbt-text
+{
+  font-size: 15px;
+}
+
+mat-toolbar a{
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+
+.button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  border-radius: 0;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  font-size: .8em;
+  font-weight: 700;
+  height: 2.5em;
+  line-height: 3.65em;
+  padding: 0 2.25em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+
+  .button.alt {
+      background-color: transparent;
+      box-shadow: inset 0 0 0 2px #fff;
+      color: #fff!important; 
+      height: inherit!important;
+  }
+      
+.button.alt:hover {
+      background: #673ab7;
+      }
+.cbt-exam-icon{
+  padding-top: 15px;
+    position: absolute;
+}
+
+//image
+
+.image
+{
+  display: inline-block!important
+}
+

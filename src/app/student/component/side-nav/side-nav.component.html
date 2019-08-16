@@ -1,0 +1,132 @@
+<mat-card style="background:inherit">
+  <mat-card-content>
+    <mat-grid-list cols="12" rowHeight="650px" class="mat-grid-list-container">
+      <div class="dashboard-container mat-grid-image-container">
+        <div class="ui segment" style="min-height:200px!important">
+          <div class="dashboard-box-body" *ngIf="userProfile">
+            <mat-grid-list cols="9" rowHeight="150px">
+              <mat-grid-tile [colspan]="9" [rowspan]="1" class="dashboard-box-tile">
+                
+                <div *ngIf="userProfile?.imageUrl">
+                  <img  style="border-style: groove;" width="140" height="140" src="{{baseUrl}}/Candidate/GetUserImage/?imageUrl={{userProfile?.imageUrl}}">
+                </div>
+                
+                <div *ngIf="!userProfile?.imageUrl">
+                    <img  src="./assets/edu.jpg" style="border-style: groove;" width="140" height="140">
+                </div>
+
+              </mat-grid-tile>
+            </mat-grid-list>
+          </div>
+          <sui-dimmer class="inverted" [(isDimmed)]="pending" isClickable="false">
+            <div class="ui text loader">Loading</div>
+          </sui-dimmer>
+        </div>
+
+      </div>
+       <!--Assessment-->
+       <div class="dashboard-container" *ngIf="!successResult && examTopicArray && examTopicArray.length > 0">
+        <div class="ui segment" style="min-height:200px!important; padding: 0px" >
+      <div class="dashboard-box-body" >
+        <mat-grid-list cols="9" rowHeight="290px">
+          <mat-grid-tile [colspan]="9" [rowspan]="1" class="dashboard-box-tile">
+            <mat-list class="mat-grid-list-container">
+             
+              <mat-list-item class="mat-list-container">
+                  <div>
+                    <h3 class="margin-align">ASSESSMENTS</h3>
+                  </div>
+                </mat-list-item>
+               <hr>
+                <mat-list-item class="mat-list-container">
+                    <div>
+                      <h4 style="float:left; margin-bottom: 2px"><strong style="color:rgb(207, 22, 22)">Answered:</strong>
+                        <strong style="color:rgb(207, 22, 22)"> {{countSubmit}}</strong>  of <strong style="color:rgb(207, 22, 22)">{{totalQuestion}}</strong> </h4>
+                   <h4 style="float:left; margin: 0px">
+                      <strong style="color:rgb(207, 22, 22)">Flagged Question: </strong> <strong style="color:rgb(207, 22, 22)"> {{countFlagged}}</strong>
+                   </h4>
+                      </div>
+                  </mat-list-item>
+                  <hr>
+              <mat-list-item *ngFor="let topic of examTopicArray">
+                  <div class="ui secondary left aligned vertical fluid no-padding menu ">
+                      <a class="item mat-margin-right" routerLinkActive="active" [ngClass]="selectedItem == topic && firstTopic ? 'active' :  'not-active'" (click)="clickedTopic(topic)" [routerLink]="['/student/dashboard', {id: topic?.examTopic?.examTopicId}]">
+                        {{topic?.examTopic?.examTopicName}} 
+                      </a>
+                  </div>
+                <strong>(<span>{{topic?.examQuestionLength}}</span>)</strong>
+                <mat-divider></mat-divider>
+              </mat-list-item>
+            </mat-list>
+
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <sui-dimmer class="inverted" [(isDimmed)]="questionSuccess" isClickable="false">
+          <div class="ui text loader">Loading</div>
+        </sui-dimmer>
+      </div>
+    </div>
+      <!--Profile Details-->
+      <div class="dashboard-container ">
+        <div class="ui segment" style="min-height:200px!important;padding: 0px">
+          <div class="dashboard-box-body" *ngIf="userProfile">
+            <mat-grid-list cols="9" rowHeight="250px">
+              <mat-grid-tile [colspan]="9" [rowspan]="1" class="dashboard-box-tile">
+                <mat-list class="mat-grid-list-container">
+                  <mat-list-item class="mat-list-container">
+                    <div>
+                      <h3 class="margin-align">PROFILE DETAILS</h3>
+                    </div>
+                  </mat-list-item>
+                  <mat-list-item><strong class="mat-margin-right">Username:</strong>
+                    <span>{{userProfile?.userName}}</span>
+                  </mat-list-item>
+                  <mat-divider></mat-divider>
+                  <mat-list-item><strong class="mat-margin-right">Last Name:</strong>
+                    <span>{{userProfile?.lastName}}</span>
+                  </mat-list-item>
+                  <mat-divider></mat-divider>
+                  <mat-list-item><strong class="mat-margin-right">First Name:</strong>
+                    <span>{{userProfile?.firstName}}</span>
+                  </mat-list-item>
+                  <mat-divider></mat-divider>
+                  <mat-list-item><strong class="mat-margin-right">Category:</strong>
+                    <span>{{userProfile?.categoryName}}</span>
+                  </mat-list-item>
+                  <mat-divider></mat-divider>
+                </mat-list>
+
+              </mat-grid-tile>
+            </mat-grid-list>
+          </div>
+          <sui-dimmer class="inverted" [(isDimmed)]="pending" isClickable="false">
+            <div class="ui text loader">Loading</div>
+          </sui-dimmer>
+        </div>
+      </div>
+     
+      <!--Buttons-->
+      <div class="dashboard-container" *ngIf="instructions">
+        <div class="dashboard-box-body">
+          <mat-grid-list cols="9" rowHeight="100px">
+            <mat-grid-tile [colspan]="9" [rowspan]="1" class="dashboard-box-tile">
+              <mat-list class="mat-grid-list-container">
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                  <button mat-raised-button color="primary" style="width:200px">Instructions</button>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                  <button mat-raised-button color="accent" style="width:200px">Calculator</button>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+              </mat-list>
+
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+      </div>
+    </mat-grid-list>
+  </mat-card-content>
+</mat-card>

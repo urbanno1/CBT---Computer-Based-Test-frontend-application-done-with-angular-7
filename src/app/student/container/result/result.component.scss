@@ -1,0 +1,74 @@
+$left:2px;
+$right:2px;
+
+.dashboard-container{
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
+  max-width: 100%;
+  width: 100%;
+    -webkit-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+    -moz-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+    box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+    padding:2%;
+    color: rgba(0,0,0,.87)!important;
+    }
+     
+.dashboard-box-body{
+  padding: 3%;
+  color: #d2d2d2;
+  margin-bottom:10px;
+  background-color: #fff;
+  }
+
+.mat-align-left{
+  left: $left;
+  position: absolute;
+  }
+
+.mat-align-right{
+  right: $right;
+  position: absolute;
+}
+
+.mat-margin-right{
+  margin-right: 30px!important;
+ }
+ 
+
+.instruction-text-body{
+height: 100%;
+overflow:auto;
+padding: 2%;
+width: 100%;
+}
+
+.mat-exam-button
+{
+  width:100px;
+}
+
+.mat-card-body
+{
+  background:inherit;
+}
+.mat-grid-list-container{
+  overflow:auto;
+}
+
+//exam-menu container
+.mat-grid-body-container{
+position: sticky;
+top: 0;
+z-index: 1;
+padding:0px
+}
+.mat-grid-exam-container{
+  padding:0px;
+}
+//exam-menu container ends here
+
+.mat-grid-text-container{
+  color: rgba(0,0,0,.87);
+  height: 100%;
+}

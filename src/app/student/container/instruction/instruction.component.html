@@ -1,0 +1,40 @@
+<mat-card class="mat-card-body">
+    <mat-card-content>
+        <mat-grid-list cols="12" rowHeight="650px" class="mat-grid-list-container">
+                <div class="dashboard-container mat-grid-body-container">
+                        <div class="dashboard-box-body mat-grid-exam-container">
+                            <div > 
+                                <app-exam-menu [time1$]="time1$" [firstTitle]="instruction?.examInstructionTitle"></app-exam-menu>
+                            </div>
+                        </div>
+                    </div>
+            <div class="dashboard-container">
+                <div class="dashboard-box-body">
+                    <!--Question Body-->
+                    <mat-grid-list cols="12" rowHeight="250px"  class="mat-grid-text-container">
+                        <mat-grid-tile [colspan]="12">
+                            <div class="instruction-text-body form">
+                                <p *ngIf="instruction"><strong>The time for this instruction is specified on the timer above</strong></p>
+                                <div [innerHTML]="instruction?.examInstructionBody"></div>
+                                <sui-dimmer class="inverted" [(isDimmed)]="instructionTimeSuccess" isClickable="false">
+                                    <div class="ui text loader">Loading</div>
+                                </sui-dimmer>
+                            </div>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                    <!--Previous and Next Button-->
+                    <mat-divider></mat-divider>
+                    <mat-grid-list cols="12" rowHeight="60px">
+                        <mat-grid-tile [colspan]="12">
+                            <div class="mat-align-right">
+                                <button mat-raised-button color="accent" [routerLink]="['/student/dashboard']" class="mat-exam-button">Start
+                                    Exam</button>
+                            </div>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                </div>
+            </div>
+        </mat-grid-list>
+
+    </mat-card-content>
+</mat-card>

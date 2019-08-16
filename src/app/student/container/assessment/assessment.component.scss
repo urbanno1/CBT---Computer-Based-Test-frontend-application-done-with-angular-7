@@ -1,0 +1,157 @@
+$left:2px;
+$right:2px;
+
+.dashboard-container{
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
+  max-width: 100%;
+  width: 100%;
+    -webkit-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+    -moz-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+    box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+    padding:2%;
+    color: rgba(0,0,0,.87)!important;
+    }
+     
+.dashboard-box-body{
+  padding: 3%;
+  color: #d2d2d2;
+  margin-bottom:10px;
+  background-color: #fff;
+  }
+
+.mat-align-left{
+  left: $left;
+  position: absolute;
+  }
+
+.mat-align-right{
+  right: $right;
+  position: absolute;
+}
+
+.instruction-text-body{
+height: 100%;
+overflow:auto;
+padding: 2%;
+}
+
+.mat-exam-button
+{
+  width:100px;
+}
+
+.mat-card-body
+{
+  background:inherit;
+}
+.mat-grid-list-container{
+  overflow:auto;
+}
+
+//exam-menu container
+.mat-grid-body-container{
+position: sticky;
+top: 0;
+z-index: 1;
+padding:0px
+}
+.mat-grid-exam-container{
+  padding:0px;
+}
+//exam-menu container ends here
+
+.mat-grid-text-container{
+  color: rgba(0,0,0,.87);
+}
+
+          //Radio button
+.example-radio-group {
+display: inline-flex;
+flex-direction: column;
+}
+                        
+.example-radio-button {
+margin: 5px;
+}
+                        
+.example-selected-value {
+margin: 15px 0;
+}
+
+
+//radio button
+
+// .myButton {
+// 	-moz-box-shadow:inset 0px 17px 14px -3px #ffffff;
+// 	-webkit-box-shadow:inset 0px 17px 14px -3px #ffffff;
+// 	box-shadow:inset 0px 17px 14px -3px #ffffff;
+// 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9))!important;
+// 	background:-moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%)!important;
+// 	background:-webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%)!important;
+// 	background:-o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%)!important;
+// 	background:-ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%)!important;
+// 	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%)!important;
+// 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9',GradientType=0)!important;
+// 	background-color:#f9f9f9!important;
+// 	-moz-border-radius:4px;
+// 	-webkit-border-radius:4px;
+// 	border-radius:4px;
+// 	border:1px solid #dcdcdc;
+// 	display:inline-block;
+// 	cursor:pointer;
+// 	color:#666666;
+// 	font-family:Arial;
+// 	font-size:15px;
+// 	font-weight:bold;
+// 	padding:15px 25px;
+// 	text-decoration:none;
+//     text-shadow:0px 1px 0px #ffffff;
+// }
+
+// .myButton:hover {
+// 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9))!important;
+// 	background:-moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%)!important;
+// 	background:-webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%)!important;
+// 	background:-o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%)!important;
+// 	background:-ms-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%)!important;
+// 	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%)!important;
+// 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9',GradientType=0);
+// 	background-color:#e9e9e9;
+// }
+// .myButton:active {
+// 	position:relative;
+// 	top:1px;
+// }
+
+
+.radio-button
+{
+  -moz-box-shadow:inset 0px 17px 14px -3px #ffffff;
+	-webkit-box-shadow:inset 0px 17px 14px -3px #ffffff;
+  box-shadow:inset 0px 17px 14px -3px #ffffff;
+  //border-radius:4px;
+	border:1px solid #dcdcdc;
+  display:inline-block;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9',GradientType=0)!important;
+  padding:3px;
+  background-color: #c5d6d1 !important;
+  width: 200px;
+}
+   
+
+.example-h2 {
+  margin: 10px;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.example-margin {
+  margin: 0 10px;
+}

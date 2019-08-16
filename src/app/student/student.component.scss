@@ -1,0 +1,49 @@
+//Exam menu css
+$background: rgb(166, 172, 166);
+  .exam-menu-grid-list
+  {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  .exam-menu-grid-tile 
+  {
+   // height:100px!important
+  }
+
+  .exam-menu-grid-card 
+  {
+    background: #ec5985;
+    width:100% !important;
+  }
+
+  // Dashboard css
+  .dashboard-grid-list
+  {
+    background:$background;
+
+  }
+
+  .dashboard-grid-card 
+  {
+    background:inherit;
+    width: 100% !important;
+  }
+
+  .dashboard-grid-tile 
+  {
+    //height:100%!important;
+  }
+
+
+// Side nav css
+.side-nav-grid-card 
+  {
+    background:inherit;
+    width: 100% !important;
+  }
+  .side-nav-grid-tile 
+  {
+    //height:100%!important;
+  }
+  

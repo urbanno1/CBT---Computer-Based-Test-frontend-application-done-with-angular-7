@@ -1,0 +1,52 @@
+<mat-card class="mat-card-body">
+    <mat-card-content>
+        <mat-grid-list cols="12" rowHeight="650px" class="mat-grid-list-container">
+            <div class="dashboard-container mat-grid-body-container">
+                <div class="dashboard-box-body mat-grid-exam-container">
+                    <div>
+                        <app-exam-menu [time1$]="time1$" [firstTitle]="'ASSESSMENT OPTIONS'"></app-exam-menu>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard-container">
+                <div class="dashboard-box-body">
+                    <!--Question Body-->
+                    <mat-grid-list cols="12" rowHeight="400px" class="mat-grid-text-container">
+                        <mat-grid-tile [colspan]="12">
+                            <div class="instruction-text-body">
+
+                                <p style="text-align:center"><strong>You have 3 minute(s) to read the instructions below</strong></p>
+                                <p style="text-align:center"><strong>Choose assesment options from below</strong></p>
+                                <div >
+                                    <div style="margin-bottom:30px">
+                                        <p>
+                                            <mat-checkbox class="example-margin radio-button" [(ngModel)]="checked">Select
+                                                All
+                                            </mat-checkbox>
+                                        </p>
+
+                                    </div>
+                                    <div>
+                                        <p *ngFor="let season of seasons">
+                                            <mat-checkbox class="example-margin radio-button" [(ngModel)]="checked">
+                                                {{season}}
+                                            </mat-checkbox>
+                                        </p>
+
+                                    </div>
+                                </div>
+
+                                <div class="mat-align-right">
+                                    <button mat-raised-button color="accent" [routerLink]="['/student/instruction']"
+                                        class="mat-exam-button">
+                                        Next</button>
+                                </div>
+                            </div>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                </div>
+            </div>
+        </mat-grid-list>
+
+    </mat-card-content>
+</mat-card>

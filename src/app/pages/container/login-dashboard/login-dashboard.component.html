@@ -1,0 +1,4 @@
+<app-nav>
+<app-login (registerForm)="activateForm($event)" *ngIf="!register"></app-login>
+<app-register  (loginForm)="activateLoginForm($event)" *ngIf="register"></app-register>
+</app-nav>

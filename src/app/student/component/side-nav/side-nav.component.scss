@@ -1,0 +1,99 @@
+
+.dashboard-container{
+display: flex;
+flex-direction: column;
+min-width: 120px;
+max-width: 100%;
+width: 100%;
+// background-color: #fff;
+-webkit-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+ -moz-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+ box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+ padding:2%;
+}
+       
+.dashboard-box-body{
+padding: 2%;
+color: #d2d2d2;
+margin-bottom:10px;
+background-color: #fff;
+}
+  
+.dashboard-box-tile{
+width: 100%!important;
+
+}
+    
+.margin-align{
+ text-align: center!important;
+ justify-content: center!important
+ }
+.example-button-row button,
+.example-button-row a {
+margin-right: 8px;
+}
+  
+ //Radio button
+.example-radio-group {
+display: inline-flex;
+flex-direction: column;
+}
+              
+.example-radio-button {
+margin: 5px;
+}
+              
+.example-selected-value {
+margin: 15px 0;
+}
+
+.mat-grid-list-container{
+  overflow:auto;
+  word-wrap: none;
+}
+
+.mat-grid-image-container{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 0px 2% 0px 2%!important; 
+}
+
+.mat-grid-list-container{
+  width: 100%!important;
+}
+
+.mat-margin-right{
+ margin-right: 30px!important;
+}
+
+
+ .ui.secondary.menu {
+  a.item {
+    border-left: 3px solid transparent;
+    background: #fff;
+    border-radius: 0px !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #abc2e7;
+    font-size: 15px;
+
+     &:hover {
+      border-color: #3884ff;
+      color: #3884ff;
+    }
+    &.active {
+      border-color: #0c962f;
+      color: #0c962f;
+    }
+  }
+}
+
+.not-active {
+  border-color: #d9f53b!important;
+  color: #d9f53b!important;
+}
+
+.no-padding{
+  padding: 0px!important;
+}

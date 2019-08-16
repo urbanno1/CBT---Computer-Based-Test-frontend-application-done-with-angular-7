@@ -1,0 +1,65 @@
+<mat-card class="mat-card-body">
+  <mat-card-content>
+      <mat-grid-list cols="12" rowHeight="650px" class="mat-grid-list-container">
+              <div class="dashboard-container mat-grid-body-container">
+                      <div class="dashboard-box-body mat-grid-exam-container">
+                          <div > 
+                              <app-exam-menu [firstTitle]="'Exam Result Details'"  [time1$]="''" ></app-exam-menu>
+                          </div>
+                      </div>
+                  </div>
+          <div class="dashboard-container">
+              <div class="dashboard-box-body">
+                  <!--Question Body-->
+                  <mat-grid-list cols="12" rowHeight="400px"  class="mat-grid-text-container">
+                      <mat-grid-tile [colspan]="12">
+                          <div class="instruction-text-body form">
+                            <div class="dashboard-container ">
+                                <div class="ui segment" style="min-height:200px!important;padding: 0px">
+                                  <div class="dashboard-box-body" *ngIf="examResults">
+                                    <mat-grid-list cols="9" rowHeight="280px">
+                                      <mat-grid-tile [colspan]="9" [rowspan]="1" class="dashboard-box-tile">
+                                        <mat-list class="mat-grid-list-container">
+
+                                          <mat-list-item *ngFor="let result of examResults?.examAnswerScore">
+                                            <strong class="mat-margin-right">{{result?.topicName}}:</strong>
+                                            <span>{{result?.topicCorrectScore}}</span>
+                                          </mat-list-item>
+                                          
+                                          <mat-divider></mat-divider>
+                                          <mat-list-item><strong class="mat-margin-right" style="color:rgb(19, 129, 74)"> Total Score:</strong>
+                                            <span>{{examResults?.totalCorrectScore}} / {{examResults?.totalQuestionLength}}</span>
+                                          </mat-list-item>
+                                         
+                                          <mat-list-item><strong class="mat-margin-right" style="color:rgb(19, 129, 74)">Percentage Score:</strong>
+                                            <span>{{examResults?.percentageTotalCorrectScore}}%</span>
+                                          </mat-list-item>
+                                          <mat-divider></mat-divider>
+                                        </mat-list>
+                                      </mat-grid-tile>
+                                    </mat-grid-list>
+                                  </div>
+                                </div>
+                              </div>
+                              <sui-dimmer class="inverted" [(isDimmed)]="resultSuccess" isClickable="false">
+                                  <div class="ui text loader">Loading</div>
+                              </sui-dimmer>
+                          </div>
+                      </mat-grid-tile>
+                  </mat-grid-list>
+                  <!--Previous and Next Button-->
+                  <mat-divider></mat-divider>
+                  <mat-grid-list cols="12" rowHeight="60px">
+                      <mat-grid-tile [colspan]="12">
+                          <div class="mat-align-right">
+                              <button mat-raised-button color="accent" (click)="exit()" 
+                              class="mat-exam-button">Exit</button>
+                          </div>
+                      </mat-grid-tile>
+                  </mat-grid-list>
+              </div>
+          </div>
+      </mat-grid-list>
+
+  </mat-card-content>
+</mat-card>

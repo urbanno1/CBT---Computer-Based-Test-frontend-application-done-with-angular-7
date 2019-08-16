@@ -1,0 +1,22 @@
+<app-menu>
+    </app-menu>
+     <!--Dashboard and Side Nav-->
+    <mat-grid-list cols="4" class="dashboard-grid-list">
+        <!--Dashboard view-->
+        <mat-grid-tile [colspan]="3" [rowspan]="2" class="dashboard-grid-tile">
+            <mat-card class="dashboard-grid-card">
+                <mat-card-content>
+                    <router-outlet></router-outlet>
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+
+        <!--Side nav bar -->
+        <mat-grid-tile [colspan]="1" [rowspan]="2" *ngIf="!(isHandset$ | async)" class="side-nav-grid-tile">
+            <mat-card class="side-nav-grid-card">
+                <mat-card-content>
+                    <app-side-nav [userProfile]="user" [pending]="pending"></app-side-nav>
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>

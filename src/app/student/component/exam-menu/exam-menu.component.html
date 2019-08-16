@@ -1,0 +1,73 @@
+<div class="dashboard-container">
+    <div class="dashboard-box-body">
+        <!--button heading-->
+        <mat-grid-list cols="12" rowHeight="90px">
+            <mat-grid-tile [colspan]="3" class="dashboard-body-tile">
+                <div class="" *ngIf="firstTitle">
+                    <mat-card>{{firstTitle | uppercase}}</mat-card>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="3">
+                <div>
+                    <mat-card *ngIf="currentPage && totalPage">Question {{currentPage}} of {{totalPage}}</mat-card>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="6">
+                <span *ngIf="time1$ | async as time1">
+                    <span style="display:inline-block;margin-right: 2px">
+                        <mat-card *ngIf="time1.days >= 0">
+                            <span>Days</span><br>
+                            <span style="font-size:25px">
+                                <span *ngIf="time1.days >= 0 && time1.days >= 10">
+                                    <strong>{{time1.days}}</strong>
+                                </span>
+                                <span *ngIf="time1.days >= 0 && time1.days < 10">
+                                    <strong>0{{time1.days}}</strong>
+                                </span>
+                            </span>
+                        </mat-card>
+                    </span>
+                    <span style="display:inline-block;margin-right: 2px">
+                        <mat-card *ngIf="time1.hours >= 0">
+                            <span>Hrs</span><br>
+                            <span style="font-size:25px">
+                                <span *ngIf="time1.hours >= 0 && time1.hours >= 10">
+                                    <strong>{{time1.hours}}</strong>
+                                </span>
+                                <span *ngIf="time1.hours >= 0 && time1.hours < 10">
+                                    <strong>0{{time1.hours}}</strong>
+                                </span>
+                            </span>
+                        </mat-card>
+                    </span>
+                    <span style="display:inline-block;margin-right: 2px">
+                        <mat-card *ngIf="time1.minutes >= 0">
+                            <span>Mins</span><br>
+                            <span style="font-size:25px">
+                                <span *ngIf="time1.minutes >= 0 && time1.minutes >= 10">
+                                    <strong>{{time1.minutes}}</strong>
+                                </span>
+                                <span *ngIf="time1.minutes >= 0 && time1.minutes < 10">
+                                    <strong>0{{time1.minutes}}</strong>
+                                </span>
+                            </span>
+                        </mat-card>
+                    </span>
+                    <span style="display:inline-block;margin-right: 2px">
+                        <mat-card *ngIf="time1.seconds >= 0">
+                            <span>Secs</span><br>
+                            <span style="font-size:25px">
+                                <span *ngIf="time1.seconds >= 0 && time1.seconds >= 10">
+                                    <strong>{{time1.seconds}}</strong>
+                                </span>
+                                <span *ngIf="time1.seconds >= 0 && time1.seconds < 10">
+                                    <strong>0{{time1.seconds}}</strong>
+                                </span>
+                            </span>
+                        </mat-card>
+                    </span>
+                </span>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>

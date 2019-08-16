@@ -1,0 +1,31 @@
+$left:2px;
+$right:2px;
+
+.dashboard-container{
+display: flex;
+flex-direction: column;
+min-width: 120px;
+max-width: 100%;
+width: 100%;
+-webkit-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+-moz-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+padding:2%;
+      // background: #e91e63;
+}
+       
+.dashboard-box-body{
+            // padding: 5%;
+color: #d2d2d2;
+background-color: #ec5985;
+}
+
+.mat-align-right{
+right: $right;
+position: absolute;
+}
+
+.mat-align-left{
+left: $left;
+position: absolute;
+}

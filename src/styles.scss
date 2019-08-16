@@ -1,0 +1,130 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif }
+
+.ui.form input:not([type]), .ui.form input[type=date], .ui.form input[type=datetime-local], .ui.form input[type=email], .ui.form input[type=file], .ui.form input[type=number], .ui.form input[type=password], .ui.form input[type=search], .ui.form input[type=tel], .ui.form input[type=text], .ui.form input[type=time], .ui.form input[type=url] {
+ padding: 0!important;
+ border:0!important
+}
+    
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 120px;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+  
+  .example-right-align {
+    text-align: right;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  input.example-right-align {
+    -moz-appearance: textfield;
+  }
+
+
+.login-container{
+  display: flex;
+  flex-direction: column;
+  min-width: 120px!important;
+  max-width: 400px!important;
+  width: 100%;
+     
+  padding: 0% !important;
+  background-color: #fff;
+  -webkit-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+  -moz-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+  box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+    }
+    
+.login-title
+    {
+      margin-bottom:5px!important;
+    }
+
+.login-box-header{
+  width: auto;
+  height: 20%;
+  background-color: #673ab7;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 3em;
+  padding: 2%;
+  color: #fff;
+}
+     
+.register-box-header{
+  width: auto;
+  height: 15%;
+  background-color: #673ab7;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 3em;
+  padding: 1%;
+  color: #fff;
+  margin-right: 30px;
+  cursor: pointer;
+        }
+
+    .login-box-body{
+    width: auto;
+    height:100%;
+    padding: 5% 5% 5% 5%;
+    color: #d2d2d2;
+    }
+    
+  .login-icon{
+    margin-top: -2px;
+    }
+     
+    .justifier {
+    width: 100%;
+    padding-bottom: 2%;
+    }
+     
+    .login-button{
+    width: 100%;
+    padding:1.5% !important;
+        background-color: #673ab7;
+        font-size: 1.5em;
+        color: #fff !important;
+        cursor: pointer;
+    }
+    
+    .hidden
+    {
+     display: none;
+    }
+
+  
+.login-header{
+  width: auto;
+   height: 20%;
+   background-color: #673ab7;
+   text-align: center;
+   vertical-align: middle;
+   font-size: 2em;
+   padding: 2%;
+   color: #fff;
+}
+
+h1 {
+  font-size: 2em!important;
+  margin: .67em 0!important;
+}
+
+.mat-input-element {
+          font-size: 20px!important;
+      }

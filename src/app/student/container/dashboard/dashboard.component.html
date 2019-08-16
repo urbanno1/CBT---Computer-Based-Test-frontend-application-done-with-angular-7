@@ -1,0 +1,96 @@
+<mat-card class="mat-card-body">
+    <mat-card-content>
+        <mat-grid-list cols="12" rowHeight="650px" class="mat-grid-list-container">
+            <div class="dashboard-container mat-grid-body-container">
+                <div class="dashboard-box-body mat-grid-exam-container">
+                    <div>
+                        <app-exam-menu [time1$]="time1$" [firstTitle]="questionDisplayed?.examTopicName" [currentPage]="questionDisplayed?.page"
+                            [totalPage]="questionDisplayed?.examQuestionLength"></app-exam-menu>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-container">
+                <div class="dashboard-box-body">
+                    <!--Question Body-->
+                    <mat-grid-list cols="12" rowHeight="300px" class="mat-grid-text-container">
+                        <!--Body question texts-->
+                        <mat-grid-tile [colspan]="11" [rowspan]="1">
+                            <div class="instruction-text-body" *ngIf="examQuestions && examQuestions.length > 0">
+                                <div *ngFor="let question of examQuestions">
+                                    <div>
+                                        <div style="margin-bottom: 20px;">
+                                            {{question?.questionBody}}
+                                        </div>
+                                        <p>
+                                            <mat-radio-group (change)="SelectedOption($event, question?.examQuestionId, questionDisplayed?.examTopicId)">
+                                                <span style="display: flex; margin-bottom: 15px;">
+                                                    <mat-radio-button [checked]="question?.answer == 'OptionA'"   [value]="'OptionA'">{{question?.optionA}}</mat-radio-button>
+                                                    <mat-radio-button [checked]="question?.answer == 'OptionB'"   [value]="'OptionB'">{{question?.optionB}}</mat-radio-button>
+                                                </span>
+                                                <span style="display: flex;margin-bottom: 15px;">
+                                                    <mat-radio-button [checked]="question?.answer == 'OptionC'"  [value]="'OptionC'">{{question?.optionC}}</mat-radio-button>
+                                                    <mat-radio-button [checked]="question?.answer == 'OptionD'"  [value]="'OptionD'">{{question?.optionD}}</mat-radio-button>
+                                                </span>
+                                                <span style="display: flex;margin-bottom: 15px;" *ngIf="question?.optionE">
+                                                    <mat-radio-button [checked]="question?.answer == 'OptionE'"  [value]="'OptionE'">{{question?.optionE}}</mat-radio-button>
+                                                </span>
+                                            </mat-radio-group>
+                                        </p>
+                                        <!--Flag a question-->
+                                        <div class="mat-align-right" style="margin-top: -90px">
+                                            <button mat-raised-button color="warn" (click)="flagQuestion(questionDisplayed?.examQuestionLength, questionDisplayed?.examTopicId, questionDisplayed?.page)" matTooltip="Flag this question"
+                                                class="mat-button">
+                                                <mat-icon>check</mat-icon>
+                                            </button>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                                <div style="margin-top:30px">
+                                    <!--Previous and Next Button-->
+                                    <hr/>
+                                    <mat-grid-list cols="12" rowHeight="60px">
+                                        <mat-grid-tile [colspan]="3" [rowspan]="1">
+                                            <div class="mat-align-left">
+                                                <button mat-raised-button color="accent" style="width:100px" [disabled]='questionDisplayed?.page == 1' (click)="previousPage(questionDisplayed?.page, questionDisplayed?.examTopicId)">Previous</button>
+                                            </div>
+                                        </mat-grid-tile>
+                                        <mat-grid-tile [colspan]="3" [rowspan]="1">
+                                            <div class="mat-align-left">
+                                                <button mat-raised-button color="accent" style="width:100px" [disabled]="questionDisplayed?.page == questionDisplayed?.examQuestionLength" (click)="nextPage(questionDisplayed?.page, questionDisplayed?.examTopicId)">Next</button>
+                                            </div>
+                                        </mat-grid-tile>
+                                        <mat-grid-tile [colspan]="6" [rowspan]="1">
+                                            <div class="mat-align-right">
+                                                <button mat-raised-button color="accent" [disabled]="percentageAnswered < 70" (click)="submitAnswers()" style="width:100px">Submit</button>
+                                            </div>
+                                        </mat-grid-tile>
+                                    </mat-grid-list>
+
+                                </div>
+                            </div>
+                            <sui-dimmer class="inverted" [(isDimmed)]="questionSuccess" isClickable="false">
+                                <div class="ui text loader">Loading</div>
+                            </sui-dimmer>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+
+                    <!--paginations-->
+                    <hr *ngIf="examQuestions && examQuestions.length > 0" />
+                    <mat-grid-list cols="12" *ngIf="examQuestions && examQuestions.length > 0">
+                        <mat-grid-tile [colspan]="1" [rowspan]="1" *ngFor="let page of pages">
+                            <div class="mat-align-left">
+                                <button mat-raised-button  class="color:blue" [color]="page?.flagged ? 'warn' : currentPage?.page == page?.page && currentPage?.flagged ? 'primary' : 'accent' " (click)="goToPage(page, questionDisplayed?.examTopicId)">{{page?.page}}</button>
+                            </div>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+
+                   
+                </div>
+            </div>
+
+        </mat-grid-list>
+    </mat-card-content>
+</mat-card>
